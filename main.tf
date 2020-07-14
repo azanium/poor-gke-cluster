@@ -54,11 +54,11 @@ resource "google_container_node_pool" "primary_preemptible_nodes" {
   name       = "my-poor-node-pool"
   location   = var.location
   cluster    = google_container_cluster.primary.name
-  node_count = 2
+  node_count = 3
 
   node_config {
     preemptible  = true
-    machine_type = "f1-micro"
+    machine_type = "g1-small"
     # you get 30gb free so 3 x 10gb 
     disk_size_gb = 10
 
